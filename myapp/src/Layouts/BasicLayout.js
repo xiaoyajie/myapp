@@ -1,6 +1,6 @@
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Carousel } from 'antd';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'dva';
 import { ContainerQuery } from 'react-container-query';
 import classnames from 'classnames';
@@ -58,65 +58,71 @@ class BasicLayout extends React.Component {
           // collapsedWidth="0" 不显示图标，全部折叠进去
           trigger={null}
           collapsible
-          collapsed={this.state.collapsed}
+        //   collapsed={this.state.collapsed}
         >
           <div className={styles.logo}>
             <Link to="/">
               <img src="https://gw.alipayobjects.com/zos/rmsportal/iwWyPinUoseUxIAeElSx.svg" alt="logo" />
-              <h1>宠物交易平台</h1>
+              <h1>宠物</h1>
             </Link>
           </div>
           <Menu
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
-            style={{ height: '100%', borderRight: 0 }}
+            // style={{ height: '100%', borderRight: 0 }}
           >
             <SubMenu key="sub1" title={<span><Icon type="smile" /><span>宠物猫</span></span>}>
-              <Menu.Item key="1">
-                <Link to="/first">
-                  波斯猫
-                </Link></Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/second">
-                  加菲猫
-                </Link></Menu.Item>
-              <Menu.Item key="3">option3</Menu.Item>
+              <Menu.Item key="1"><Link to="/first">波斯猫</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/second">加菲猫</Link></Menu.Item>
+              <Menu.Item key="3">option3</Menu.Item> 
               <Menu.Item key="4">option4</Menu.Item>
             </SubMenu>
             <SubMenu key="sub2" title={<span><Icon type="laptop" /><span>宠物狗</span></span>}>
-              <Menu.Item key="5">option5</Menu.Item>
-              <Menu.Item key="6">option6</Menu.Item>
+              <Menu.Item key="5"><Link to="/fifth">哈士奇</Link></Menu.Item>
+              <Menu.Item key="6"><Link to="/sixth">萨摩耶</Link></Menu.Item>
               <Menu.Item key="7">option7</Menu.Item>
               <Menu.Item key="8">option8</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub3" title={<span><Icon type="notification" /><span>宠物鹦鹉</span></span>}>
-              <Menu.Item key="9">option9</Menu.Item>
-              <Menu.Item key="10">option10</Menu.Item>
-              <Menu.Item key="11">option11</Menu.Item>
+            <SubMenu key="sub3" title={<span><Icon type="notification" /><span>小型宠物</span></span>}>
+              <Menu.Item key="9"><Link to="/ninth">仓鼠</Link></Menu.Item>
+              <Menu.Item key="10"><Link to="/tenth">王建</Link></Menu.Item>
+              <Menu.Item key="11"><Link to="/eleventh">时瑞涛</Link></Menu.Item>
               <Menu.Item key="12">option12</Menu.Item>
             </SubMenu>
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }}>
+          {/* <Header style={{ background: '#fff', padding: 0 }}>
             <Icon
               className={styles.trigger}
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
             />
-          </Header>
+          </Header> */}
 
           <Breadcrumb style={{ margin: '13px 0 0 18px' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item><Link to="/a">首页</Link></Breadcrumb.Item>
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 600, height: '300px', width: '300px;' }}>
-            {/* <Switch>
-              <Route path="/first" render={() => <div>sss</div>} />
-              <Route path="/second" render={() => <div>英国短毛猫</div>} />
-            </Switch> */}
+          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff'}}>
+            <Switch>
+            <Route path="/fifth" render={() => < img src="http://c1.cdn.goumin.com/cms/petschool/day_150124/20150124_59cd16a.jpg" alt="这是一张图片" />} />
+            <Route path="/sixth" render={() => < img src="http://img.mp.sohu.com/upload/20170524/462ac635ac5c49ec8651304d50fdc4b3_th.png" alt="这是一张图片" style={{width:'300px',height:'300px'}} />} />
+            <Route path="/ninth" render={() => < img src="http://a3.att.hudong.com/37/24/19300001100337129465247986358_950.jpg" alt="这是一张图片" style={{width:'300px',height:'300px'}} />} />
+            
+            <Route
+                path="/a" render={() =>
+                <Carousel classname={styles.move} autoplay> 
+                    <div>< img src="http://imgs18.iaweg.com/pic/HTTP2ltZzMuM2xpYW4uY29tLzIwMTMvYzIvNjQvZC82NS5qcGclog.jpg" alt="这是一张图片" style={{ width: '100%', height: '400px' }} /></div>
+                    <div>< img src="http://sinastorage.com/storage.caitou.sina.com.cn/products/201709/8ff4253fa4d1c97fca3762e3e6e169b7.png"alt="这是一张图片" style={{ width: '100%' ,height:'400px'}} /></div>
+                    <div>< img src="http://www.ixiupet.com/uploads/allimg/160622/2-1606221044550-L.jpg" alt="这是一张图片" style={{ width: '100%',height:'400px' }} /></div>
+                    <div>< img src="http://yiqizouguoderizi.com/content/uploadfile/201512/f3cc1449033604.jpg" alt="这是一张图片" style={{ width: '100%', height:'400px'}} /></div>
+                </Carousel>
+                }
+            />
+            </Switch>
           </Content>
           <Footer className={this.state.Footer} >
           </Footer>
