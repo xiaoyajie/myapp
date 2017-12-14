@@ -111,7 +111,7 @@ class BasicLayout extends React.Component {
             <Route path="/fifth" render={() => < img src="http://c1.cdn.goumin.com/cms/petschool/day_150124/20150124_59cd16a.jpg" alt="这是一张图片" />} />
             <Route path="/sixth" render={() => < img src="http://img.mp.sohu.com/upload/20170524/462ac635ac5c49ec8651304d50fdc4b3_th.png" alt="这是一张图片" style={{width:'300px',height:'300px'}} />} />
             <Route path="/ninth" render={() => < img src="http://a3.att.hudong.com/37/24/19300001100337129465247986358_950.jpg" alt="这是一张图片" style={{width:'300px',height:'300px'}} />} />
-            
+            <Route path="/first" render={() => < img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMoOECyV_ypnUTAelQX3rpefcstP0oFLIg6yRBu2-AnZOPUQNDbw" alt="这是一张图片" style={{width:'300px',height:'300px'}}/>} />
             <Route
                 path="/a" render={() =>
                 <Carousel classname={styles.move} autoplay> 
