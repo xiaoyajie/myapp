@@ -1,4 +1,4 @@
-import { Layout, Menu, Breadcrumb, Icon, Carousel } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Carousel,Button} from 'antd';
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { connect } from 'dva';
@@ -33,49 +33,30 @@ const query = {
 };
 
 class BasicLayout extends React.Component {
-  state = {
-    collapsed: false,
-  }
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  }
+
   render() {
-    const layout = (
-      <Layout>
-         <Header>
-      <div className="logo" />
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
-    </Header>
-    <Content style={{ padding: '0 50px' }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>首页</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
-      </Breadcrumb>
-      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>
-      Ant Design ©2016 Created by Ant UED
-    </Footer>
-      </Layout>
-    );
+const layout = (
+<div style={{display:'flex', flexDirection:'row'}}>
+  <div>
+    <img src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/home.jpg" alt="这是一张图片"/>
+  </div>
+  <div >
+    <img style={{margin:'100px 400px 10px 400px' }} src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/logo.png" alt="这是一张图片" />
+    <h1 style={{margin:'0px 298px'}}> 我就是我，吃货的我</h1>
+    <h2 style={{margin:'30px 270px'}}>瞅啥瞅，啥也没有</h2>
+    <Button style={{margin:'100px 400px 20px 400px'}}>我 的</Button>
+    <Button style={{margin:'0px 400px 20px 400px'}}>日 迹</Button>
+    <Button style={{margin:'0px 400px 100px 400px'}}>生 活</Button>
+  </div>
+</div>
+
+)
 
     return (
       <ContainerQuery query={query}>
         {params => <div className={classnames(params)}>{layout}</div>}
       </ContainerQuery>
     );
+   }
   }
-}
 export default connect()(BasicLayout);
