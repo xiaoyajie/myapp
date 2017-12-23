@@ -38,13 +38,15 @@ class first extends React.Component{
   const layout = (
     <Layout>
       <div style={{display:'flex',flexDirection:'row', Header:'70px'}}>
-        <div> <img src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/about.jpg" alt="这是一张图片"/>
+        <div> 
+          <img src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/about.jpg" alt="这是一张图片"/>
         </div>
         <div>
-          <Button  size="large" style={{margin:'100px 0px 50px 10px'}}>返回首页</Button>
-          <div className={styles.one} style={{ border: '1px solid black', width:'100px', height: '0px' }}></div>
+          <Button style={{width:'150px', height:'45px',margin:'100px 0px 50px 10px'}}><Link to="/">返回首页</Link></Button>
+          {/* <div className={styles.one} style={{ border: '1px solid black', width:'100px', height: '0px' }}></div>
           <h1 style={{margin:'0px 0px'}}>About</h1>
-          <div className={styles.two} style={{ border:'1px soild biack', width:'50px',height:'1px'}}></div>  
+          <div className={styles.two} style={{ border:'1px soild biack', width:'50px',height:'1px'}}></div>
+          <h2 style={{margin:'30px 270px'}}>瞅啥瞅，啥也没有</h2>  */}
         </div>
       </div>
     </Layout>

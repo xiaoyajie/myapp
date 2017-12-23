@@ -36,17 +36,19 @@ class BasicLayout extends React.Component {
 
   render() {
 const layout = (
-<div style={{display:'flex', flexDirection:'row'}}>
-  <div>
-    <img src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/home.jpg" alt="这是一张图片"/>
-  </div>
-  <div >
-    <img style={{margin:'100px 400px 10px 400px' }} src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/logo.png" alt="这是一张图片" />
-    <h1 style={{margin:'0px 298px'}}> 我就是我，吃货的我</h1>
-    <h2 style={{margin:'30px 270px'}}>瞅啥瞅，啥也没有</h2>
-    <Button style={{margin:'100px 400px 20px 400px'}}>我 的</Button>
-    <Button style={{margin:'0px 400px 20px 400px'}}>日 迹</Button>
-    <Button style={{margin:'0px 400px 100px 400px'}}>生 活</Button>
+<div>
+  <div style={{display:'flex', flexDirection:'row'}}>
+    <div>
+      <img src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/home.jpg" alt="这是一张图片"/>
+    </div>
+    <div >
+      <img style={{margin:'100px 400px 10px 400px' }} src="http://demo.cssmoban.com/cssthemes4/tops_36_rabbit/assets/images/logo.png" alt="这是一张图片" />
+      <h1 style={{margin:'0px 298px'}}> 我就是我，吃货的我</h1>
+      {/* <h2 style={{margin:'30px 270px'}}>瞅啥瞅，啥也没有</h2> */}
+      <Button style={{width:'150px', height:'45px', margin:'100px 400px 20px 400px'}}><Link to="/a">我 的</Link></Button>
+      <Button style={{width:'150px', height:'45px', margin:'0px 400px 20px 400px'}}><Link to="/b">日 迹</Link></Button>
+      <Button style={{width:'150px', height:'45px', margin:'0px 400px 100px 400px'}}><Link to="/c">我 的 生 活</Link></Button>
+    </div>
   </div>
 </div>
 
